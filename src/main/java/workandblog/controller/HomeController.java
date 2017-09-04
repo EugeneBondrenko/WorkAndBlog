@@ -13,6 +13,10 @@ public class HomeController {
         return "index";
     }
 
+    public void sout(){
+        System.out.println("Hello");
+    }
+
 
 
 }
