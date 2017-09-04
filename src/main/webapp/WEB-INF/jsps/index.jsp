@@ -7,7 +7,8 @@
 <body>
 
 <h1>Hello</h1>
-
+<br>
+<a href="/create">Регистрация</a>
 
 </body>
 </html>
