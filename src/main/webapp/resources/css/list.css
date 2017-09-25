@@ -1,0 +1,332 @@
+/*
+    font-family: 'Merriweather', serif;
+    font-family: 'PT Sans Caption', sans-serif;
+ */
+
+html, body{
+    font-family: 'PT Sans Caption', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/*..................
+GRID
+...................*/
+.container{
+    /*Секция ширина*/
+    width: 1140px;
+    /*выровнять по центру и автоматический отступ справа*/
+    margin-left: auto;
+    /*автоматический отступ справва*/
+    margin-right: auto;
+    /*margin-left: 150px;*/
+
+    /*margin-top: 100px;*/
+
+}
+
+.row {
+
+}
+
+.row:after{
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.col-4 {
+    /*ширина колонок*/
+    width: 360px;
+    /*отступ справа*/
+    margin-right: 30px;
+    /*колонки оптикали друг друга слева*/
+    float: left;
+
+
+}
+
+.col-4:last-child{
+    margin-right: 0px;
+}
+
+/*..................
+Header
+...................*/
+.header{
+    /*если картинка в блоке не загрузится будет фон*/
+    background: #343c4e;
+    /*подгрузили картинку чкркз css*/
+    background-image: url("/resources/img/fons/fonNew1.jpeg");
+
+
+    /*Зафиксировали картинку*/
+    background-attachment: fixed;
+
+    /*чтобы наша картинка не повторялась и загружалась в одном экземпляре*/
+    background-repeat: no-repeat;
+
+    /*центр*/
+    background-position: center;
+
+    /*пропорционально растягивалась*/
+    background-size: 100% ;
+
+    /*высота блока 100 процентов от высоты екрана, браузера*/
+    height: 100vh;
+
+    /*цвет надписи*/
+    color: #00FFFF;
+    /*разместить надпись по центру по горизонтали*/
+    text-align: center;
+
+    /*центр по вертикали*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /*позиция родитель*/
+    position: relative;
+}
+
+.header__title{
+    /**/
+    font-size: 150px;
+    /*высота строки*/
+    line-height: 62px;
+    /*отступ снизу*/
+    margin-bottom: 50px;
+    font-family: 'Merriweather', serif;
+    /*пододвинуть этот блок в верх на -50 px с собой потянет и все остальное*/
+    margin-top: -50px;
+}
+
+
+.header__slogan{
+    font-size: 50px;
+    /*высота строки*/
+    line-height: 42px;
+    color: #A5DF00;
+    /*margin-left: -500px;*/
+    margin-bottom: -100px;
+    margin-top: 50px;
+
+    font-family: 'Merriweather', serif;
+}
+
+.header__arrow i{
+    font-size: 28px;
+    /*line-height: 80px;*/
+    color: white;
+
+    /*создали блок*/
+    /*background: red;*/
+    width: 60px;
+    height: 20px;
+
+    /*подвинуть влево */
+    margin-left: -30px;
+
+    /*позиция на блоке*/
+    position: absolute;
+    /*где располагается от низа отступ*/
+    bottom: 80px;
+    /* отступ слева*/
+    left: 50%;
+}
+
+
+
+
+/*..................
+Portfolio
+...................*/
+
+.portfolio{
+    /*внутренние отступы*/
+    padding-top: 70px;
+    padding-bottom: 100px;
+}
+
+.portfolio-item{
+    margin-bottom: 20px;
+}
+
+.title{
+    font-size: 46px;
+    margin-bottom: 60px;
+    font-family: 'Merriweather', serif ;
+    text-align: center;
+    margin-right: 25px;
+}
+
+.portfolio-item__img{
+    margin-bottom: 17px;
+}
+
+.portfolio-item__title{
+    font-size: 24px;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.portfolio-item__text{
+    font-size: 16px;
+    line-height: 1.5px ;
+}
+
+.portfolio-item__title a {
+    /*делаем ссылку в черный цвет и подчеркиваем*/
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px solid white;
+    }
+
+/*выделяем ссылку при наведении курсора*/
+.portfolio-item__title a:hover{
+    color: #286050;
+    border-color: rgba(0, 82, 194, 0.3);
+}
+
+.portfolio-item__text p {
+    margin-top: 0px;
+    margin-bottom: 45px;
+}
+
+
+
+/*..................................
+Information
+.....................................*/
+
+.information {
+    width: 100%;
+    height: 100%;
+    /*выровнять по центру и автоматический отступ справа*/
+    margin-left: auto;
+    /*автоматический отступ справва*/
+    margin-right: auto;
+    background: #0B4C5F;
+}
+
+.information__border{
+    padding-top: 20vh;
+}
+
+.border{
+    margin: 0px auto ;
+
+}
+.info__logo{
+    font-size: 46px;
+    margin-bottom: 30px;
+    font-family: 'Roboto',sans-serif ;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+}
+.info__line {
+    max-width: 50px;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.info__content{
+    font-size: 25px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: 'PT Sans Caption', sans-serif;
+    text-align: center;
+    color: white;
+}
+
+
+
+/*..................
+Footer
+...................*/
+
+.footer{
+    background-color: #2E2E2E;
+color: white;
+    /*Отступ сверху*/
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+.footer p {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+p.footer__name{
+    font-size: 28px;
+    margin-bottom: 10px;
+    /*высота строки нормальная */
+    line-height: normal;
+    font-family: 'Merriweather', serif;;
+}
+
+
+/*Социальные сети*/
+.footer__social__form{
+    position: relative;
+    left: 150px;
+    margin-right: 50px;
+    width: 180px;
+    height: 130px;
+}
+.footer__social{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.footer__social__icons a{
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: white;
+    text-decoration: none;
+}
+.footer__social__icons a:hover{
+    color: #ABADB3;
+    border-color: rgba(0, 82, 194, 0.3);
+}
+
+
+/*Меню*/
+.menu{
+    margin-left: 310px;
+    position: relative;
+    left: 80px;
+
+}
+.footer__menu{
+    font-size: 20px;
+    margin-bottom: 10px;
+    /*margin-left: 100px;*/
+}
+.footer__menu__list a{
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: white;
+    text-decoration: none;
+}
+.footer__menu__list a:hover{
+    color: #ABADB3;
+    border-color: rgba(0, 82, 194, 0.3);
+}
+
+/*.t475__line {*/
+    /*max-width: 50px;*/
+    /*width: 100%;*/
+    /*height: 3px;*/
+    /*background-color: #fff;*/
+    /*margin: 0 auto;*/
+/*}*/
+
+
+
+

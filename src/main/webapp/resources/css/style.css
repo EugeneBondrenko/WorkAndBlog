@@ -1,0 +1,21 @@
+.fild-wrap{
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.fild-wrap input{
+    float: right;
+    height: 19px;
+    line-height: 19px;
+    padding: 0px 5px;
+    width: 287px;
+    border: 1px solid #ABADB3;
+}
+
+.form{
+    width: 416px;
+    margin: 0px auto;
+}
+.h3{
+    text-align: center;
+}

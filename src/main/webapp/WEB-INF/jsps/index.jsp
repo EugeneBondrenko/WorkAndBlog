@@ -9,6 +9,8 @@
 <h1>Hello</h1>
 <br>
 <a href="/create">Регистрация</a>
+<br>
+<a href="/form"> Form </a>
 
 </body>
 </html>

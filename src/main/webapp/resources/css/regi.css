@@ -1,0 +1,51 @@
+.form-row{
+    /*Отступ снизу*/
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.form-row input{
+    /*Плавающее свойство и прибить к правому краю*/
+    float: right;
+    height: 19px;
+    line-height: 19px;
+    padding: 0px 5px;
+    width: 250px;
+    border: 1px solid #ABADB3;
+}
+
+.reg-form{
+    /*Ширина формы*/
+    width: 416px;
+    margin: 0px auto;
+}
+
+h1{
+    text-align: center;
+}
+
+.form-row textarea{
+    height: 90px;
+    line-height: 16px;
+    font-size: 12px;
+    padding: 0px 5px;
+    width: 400px;
+    border: 1px solid #ABADB3;
+}
+
+.form-row input[type = submit]{
+    padding: 5px;
+    height: 25px;
+    width: 50%;
+    background: #337AB7;
+    color: white;
+}
+
+.form-row input[type = submit]:hover{
+    background: #286050;
+}
+
+*{
+    font-family: Arial;
+    font-size: 10pt;
+}
