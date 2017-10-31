@@ -12,7 +12,10 @@
 
     <import resource="mvc.xml"/>
     <import resource="database.xml"/>
+<<<<<<< HEAD
     <import resource="spring_mail.xml"/>
+=======
+>>>>>>> origin/master
 
     <!-- Настраиваем область поиска для Spring MVC -->
     <context:component-scan base-package="workandblog"/>
