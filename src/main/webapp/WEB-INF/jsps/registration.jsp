@@ -27,7 +27,7 @@
     <div class="form-row">
         <%--Связь lable с id--%>
         <label for="rorm_name"> Name : </label>
-        <input type="text" id="rorm_name" name="name">
+        <input type="text" id="rorm_name" name="name" required>
     </div>
 
     <div class="form-row">

@@ -2,6 +2,7 @@ package workandblog.entity;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "userRegistration")
@@ -26,6 +27,10 @@ public class UserRegistration {
 
     @Column
     private String compass;
+
+    @OneToMany(mappedBy = "userRegistration" , fetch = FetchType.EAGER)
+    private List<Book> books;
+
 
     public UserRegistration() {
     }
@@ -84,6 +89,14 @@ public class UserRegistration {
 
     public void setCompass(String confirmpassword) {
         this.compass = confirmpassword;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 
     @Override

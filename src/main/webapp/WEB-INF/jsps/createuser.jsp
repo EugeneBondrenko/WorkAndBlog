@@ -4,6 +4,8 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
+
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -49,7 +51,7 @@
                     <label for = "name">
                       <span class="reg">Last Name : </span>
                     </label>
-                    <input type="text" id="name" name="name" placeholder="Last Name">
+                    <input type="text" id="name" name="name" placeholder="Last Name" required>
                 </div><br>
 
                 <div class="form-row">
