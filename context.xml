@@ -12,7 +12,7 @@
 
     <import resource="mvc.xml"/>
     <import resource="database.xml"/>
-<<<<<<< HEAD
+<!--<<<<<<< HEAD-->
     <import resource="spring_mail.xml"/>
 =======
 >>>>>>> origin/master
