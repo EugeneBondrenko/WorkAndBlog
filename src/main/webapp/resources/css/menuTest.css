@@ -1,0 +1,56 @@
+/*fon*/
+body {
+    background-image: url("/resources/img/fons/testFon.jpg");
+}
+
+header {
+    margin: 200px;
+    font-family: Cupru, Arial, Helvetical;
+}
+
+/*сброс всех отступов браузера*/
+.dws-menu * {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/*горизонтальное меню*/
+.dws-menu li {
+    float: left;
+    display: block;
+    width: 200px;
+    height: 50px;
+    border: 0.5px solid black;
+    background: #ABADB3;
+
+}
+
+/*При наведении менять цвет*/
+.dws-menu li:hover {
+    background: #343c4e;
+}
+/*блок становится ссылкой*/
+.dws-menu a{
+    display: block;
+    /*Убрали высто блока !*height: 50px; и поставили отступ по 15px*!*/
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.dws-menu li ul{
+    position: absolute;
+    top: 52px;
+    width: 200px;
+    margin-top: -1px;
+    /*Спрятали блок*/
+    display: none;
+
+}
+/*при наведении на блок выплывает меню*/
+.dws-menu li:hover ul{
+    display: block;
+
+}
+

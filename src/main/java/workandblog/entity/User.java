@@ -1,46 +1,48 @@
 package workandblog.entity;
 
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.List;
 
+
 @Entity
-@Table(name = "userRegistration")
-public class UserRegistration {
+@Table(name = "user")
+public class User {
 
     @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    @GeneratedValue(generator = "increment2")
+    @GenericGenerator(name = "increment2", strategy = "increment")
     private Long id;
 
-    @Column
+    @Column(name = "name")
     private String name;
 
-    @Column
+    @Column(name = "surname")
     private String surname;
 
-    @Column
+    @Column(name = "email")
     private String email;
 
-    @Column
+    @Column(name = "password")
     private String password;
 
-    @Column
-    private String compass;
 
-    @OneToMany(mappedBy = "userRegistration" , fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER ,  cascade = CascadeType.ALL)
     private List<Book> books;
 
 
-    public UserRegistration() {
+    public User() {
     }
 
-    public UserRegistration(String name, String surname, String email, String password, String compass) {
+    public User(String name, String surname, String email, String password, List<Book> books) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.password = password;
-        this.compass = compass;
+        this.books = books;
     }
 
     public Long getId() {
@@ -83,14 +85,6 @@ public class UserRegistration {
         this.password = password;
     }
 
-    public String getCompass() {
-        return compass;
-    }
-
-    public void setCompass(String confirmpassword) {
-        this.compass = confirmpassword;
-    }
-
     public List<Book> getBooks() {
         return books;
     }
@@ -99,15 +93,15 @@ public class UserRegistration {
         this.books = books;
     }
 
+
     @Override
     public String toString() {
-        return "UserRegistration{" +
+        return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", compass='" + compass + '\'' +
                 '}';
     }
 }

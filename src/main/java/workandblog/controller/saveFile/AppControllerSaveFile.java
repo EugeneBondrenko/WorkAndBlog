@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import workandblog.enums.MainPathEnum;
-import workandblog.service.ContactService;
+
 import workandblog.util.SaveFile;
 
 import javax.servlet.http.HttpServletResponse;
@@ -21,10 +21,11 @@ import java.nio.charset.Charset;
 @Controller
 public class AppControllerSaveFile {
 
+ /*
     @Autowired
     private ContactService contactService;
+*/
 
-    private Long userId;
     private String contactName , contactSurName ,number ;
 
 
@@ -42,13 +43,13 @@ public class AppControllerSaveFile {
 
     @RequestMapping(value = "/save-new-contact", method = RequestMethod.POST)
     public ModelAndView saveNewContact(){
-        userId = new  Long(1);
-        contactName = new String("Djon");
+       Long userId = 1L;
+        contactName = "Djon";
         contactSurName = new String("Djony");
         number = new String("0639332640");
         String contactInfo = new String("Djony Good boys");
 
-        contactService.create(userId, contactName, contactSurName, number, contactInfo, originalFileName, fileName);
+/*        contactService.create(userId, contactName, contactSurName, number, contactInfo, originalFileName, fileName);*/
 
         return new ModelAndView("redirect:/show-save-new-file-page");
     }

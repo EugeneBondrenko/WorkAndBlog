@@ -1,3 +1,4 @@
+/*
 package workandblog.dao;
 
 import org.hibernate.SessionFactory;
@@ -25,3 +26,4 @@ public class ContactDaoImpl implements ContactDao {
         return null;
     }
 }
+*/

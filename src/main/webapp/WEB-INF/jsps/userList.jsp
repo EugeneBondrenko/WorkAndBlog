@@ -1,3 +1,5 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="workandblog.entity.User" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
@@ -65,8 +67,7 @@
             <th width="100">Surname</th>
             <th width="100">@mail</th>
             <th width="100">password</th>
-            <th width="150">confirm password</th>
-            <th width="100">Edit</th>
+            <th width="100">Contacts</th>
             <th width="100">Delete</th>
         </tr>
         <c:forEach items="${listUsers}" var="user">
@@ -76,16 +77,29 @@
                 <td>${user.surname}</td>
                 <td>${user.email}</td>
                 <td>${user.password}</td>
-                <td>${user.compass}</td>
-                <td><a href=" <c:url value='/edit ${user.id}'/>"> Edit </a> </td>
+                <%--<td>${user.compass}</td>--%>
+                <%--<td><a href=" <c:url value='/edit ${user.id}'/>"> Edit </a> </td>--%>
+                <td><a href=" <c:url value='/contact ${user.id}'/>"> Contacts </a> </td>
                 <td><a href="<c:url value='/remove ${user.id}'/>" > Delete </a> </td>
+                <%--&lt;%&ndash;%>
+                    <%--String url = "/contact/" + id;--%>
+                <%--%>--%>
+                <%--<td><a href="<%out.print(url);%>"> Contacts </a> </td>--%>
 
             </tr>
         </c:forEach>
     </table>
 
-    <a href="/remove"> Стартовая страницаа </a>
+    <a href="/remove"> Стартовая страницаа </a><br>
+    <h3>Тестовые ссылки</h3><br>
+
 </c:if>
+
+
+
+
+
+
 
 </body>
 </html>

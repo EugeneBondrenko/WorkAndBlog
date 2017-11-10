@@ -5,9 +5,13 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import workandblog.entity.UserRegistration;
+import workandblog.entity.Book;
+import workandblog.entity.User;
+import workandblog.entity.User;
+import workandblog.entity.User;
 
 import java.util.List;
+
 
 @Repository
 public class UserDaoImpl implements UserDao {
@@ -16,30 +20,36 @@ public class UserDaoImpl implements UserDao {
     private SessionFactory factory;
 
     @Override
-    public Long create(UserRegistration userRegistration) {
-        return (Long) factory.getCurrentSession().save(userRegistration);
+    public Long create(User user) {
+        return (Long) factory.getCurrentSession().save(user);
     }
 
 
     @Override
-    public List <UserRegistration> userList(){
-        List <UserRegistration> user = (List<UserRegistration>) factory.getCurrentSession()
-                .createQuery("FROM UserRegistration").list();
+    public List <User> userList(){
+        List <User> user = (List<User>) factory.getCurrentSession()
+                .createQuery("FROM User").list();
         return user;
     }
 
     @Override
-    public void updateUser(UserRegistration user) {
+    public List bookList() {
+        List <Book> book = (List<Book>) factory.getCurrentSession().createQuery("FROM Book").list();
+        return book;
+    }
+
+    @Override
+    public void updateUser(User user) {
         factory.getCurrentSession().update(user);
     }
 
     @Override
-    public void removeBook(long id) {
+    public void removeUser(long id) {
 
         Session session = factory.getCurrentSession();
 
                                                         //load
-        UserRegistration user = (UserRegistration) session.get(UserRegistration.class, id);
+        User user =  session.get(User.class, id);
 
         if (user != null){
             session.delete(user);
@@ -47,10 +57,9 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public UserRegistration getUserById(Long id) {
-
+    public User getUserById(long id) {
         Session session = factory.getCurrentSession();
-        UserRegistration user = (UserRegistration) session.load(UserRegistration.class,id);
+        User user =  session.get(User.class,id);
         return user;
     }
 }

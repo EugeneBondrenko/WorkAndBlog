@@ -69,6 +69,6 @@ public class AjaxController {
 
     @RequestMapping(value = "/form", method = RequestMethod.GET)
     private String list(){
-        return "list";
+        return "workAndBlog";
     }
 }

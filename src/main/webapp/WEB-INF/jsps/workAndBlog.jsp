@@ -15,7 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Merriweather|PT+Sans+Caption:400,700" rel="stylesheet">
 
 
-        <link  href="<c:url value="/resources/css/list.css"/>" rel="stylesheet" >
+        <link href="<c:url value="/resources/css/workAndBlog.css"/>" rel="stylesheet" >
 
 
     <title>Work&Blog</title>
@@ -48,6 +48,22 @@ HEADER
 ....................................--%>
 
 <div class="header">
+
+<div class="menu">
+    <nav class="dws-menu">
+        <li><a href="1"><i class="fa fa-home" ></i> Главная </a></li>
+        <li><a href="2"><i class="fa fa-cogs"></i> Новости </a>
+            <ul>
+                <li>2.1</li>
+                <li>2.2</li>
+                <li>2.3</li>
+            </ul>
+        </li>
+        <li><a href="3"><i class="fa"></i> Услуги </a></li>
+        <li><a href="4"><i class="fa"></i> Контакты </a></li>
+        <li><a href="5"><i class="fa"></i> Вход </a></li>
+    </nav>
+</div>
 
 
     <div class="header__title">Work&Blog</div><br>

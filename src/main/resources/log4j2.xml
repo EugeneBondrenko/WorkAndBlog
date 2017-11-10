@@ -2,17 +2,18 @@
 <Configuration xmlns="http://logging.apache.org/log4j/2.0/config">
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="d{dd MMM yyyy HH:mm:ss,SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <!--<PatternLayout pattern="d{dd MMM yyyy HH:mm:ss,SSS} [%t] %-5level %logger{36} - %msg%n"/>-->
+            <PatternLayout pattern="%d{ISO8601} [%t] %-5p %c %x - %m%n`"/>
         </Console>
     </Appenders>
 
     <Loggers>
 
-        <Logger name="web.logger.HumanDAOLogger" level="debug" additivity="false">
+        <Logger name="workandblog.logger.ControllerLogger" level="debug" additivity="false">
             <AppenderRef ref="Console"/>
         </Logger>
 
-        <Logger name="web.logger.HumanServiceLogger" level="debug" additivity="false">
+        <Logger name="workandblog.util.SaveFile" level="debug" additivity="false">
             <AppenderRef ref="Console"></AppenderRef>
         </Logger>
 
