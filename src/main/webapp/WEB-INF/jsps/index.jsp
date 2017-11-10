@@ -2,6 +2,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="workandblog.entity.Book" %>
 <%@ page import="java.util.List" %>
+<%@ page import="workandblog.entity.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
