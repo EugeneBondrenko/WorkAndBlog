@@ -12,6 +12,11 @@
 
     <import resource="mvc.xml"/>
     <import resource="database.xml"/>
+    <!--<import resource="databaseTest.xml"/>-->
+<!--<<<<<<< HEAD-->
+    <import resource="spring_mail.xml"/>
+<!--=======-->
+<!--&gt;>>>>>> origin/master-->
 
     <!-- Настраиваем область поиска для Spring MVC -->
     <context:component-scan base-package="workandblog"/>
@@ -20,5 +25,7 @@
     <mvc:annotation-driven/>
 
     <aop:aspectj-autoproxy/>
+
+
 
 </beans>
