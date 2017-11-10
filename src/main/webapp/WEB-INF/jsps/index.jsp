@@ -1,4 +1,4 @@
-<%@ page import="workandblog.entity.UserRegistration" %>
+<%@ page import="workandblog.entity.User" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="workandblog.entity.Book" %>
 <%@ page import="java.util.List" %>
@@ -10,7 +10,7 @@
 <body>
 
 <%Integer integer = (Integer) request.getAttribute("key");  %>
-<%ArrayList<UserRegistration> userRegistrations = (ArrayList<UserRegistration>) request.getAttribute("UserRegistrations"); %>
+<%ArrayList<User> users = (ArrayList<User>) request.getAttribute("UserRegistrations"); %>
 
 <h1>Hello   <%out.print(integer);%></h1>
 <br>
@@ -26,15 +26,15 @@
 
 <%--<%--%>
 
-    <%--for(int i =0; i<userRegistrations.size();i++){--%>
+    <%--for(int i =0; i<users.size();i++){--%>
 
-        <%--UserRegistration userRegistration = userRegistrations.get(i);--%>
+        <%--User user = users.get(i);--%>
 <%--%>--%>
 
-    <%--name: <%out.print(userRegistration.getName());%>  surname:  <%out.print(userRegistration.getSurname());%>--%>
+    <%--name: <%out.print(user.getName());%>  surname:  <%out.print(user.getSurname());%>--%>
     <%--<br>--%>
     <%--<%--%>
-        <%--List<Book> bookList = userRegistration.getBooks();--%>
+        <%--List<Book> bookList = user.getBooks();--%>
         <%--for (Book book:bookList){--%>
     <%--%>--%>
     <%--Book name ---: <%out.print(book.getTitle());%>--%>

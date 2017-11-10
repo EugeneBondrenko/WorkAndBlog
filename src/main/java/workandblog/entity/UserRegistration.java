@@ -101,7 +101,7 @@ public class UserRegistration {
 
     @Override
     public String toString() {
-        return "UserRegistration{" +
+        return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +

@@ -44,7 +44,7 @@ public class Controller {
     @RequestMapping(value = "/1", method = RequestMethod.GET)
     public ModelAndView test1() {
 
-      /*  UserRegistration userRegistration = serviceRegistration.getUserById(1);*/
+      /*  User userRegistration = serviceRegistration.getUserById(1);*/
 
 
         ArrayList<UserRegistration> userRegistrations = (ArrayList<UserRegistration>) serviceRegistration.userList();

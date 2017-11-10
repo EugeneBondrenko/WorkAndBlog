@@ -15,7 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Merriweather|PT+Sans+Caption:400,700" rel="stylesheet">
 
 
-        <link  href="<c:url value="/resources/css/list.css"/>" rel="stylesheet" >
+        <link href="<c:url value="/resources/css/list.workAndBlog.css"/>" rel="stylesheet" >
 
 
     <title>Work&Blog</title>

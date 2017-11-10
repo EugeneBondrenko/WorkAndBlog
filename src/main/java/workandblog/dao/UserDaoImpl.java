@@ -24,7 +24,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public List <UserRegistration> userList(){
         List <UserRegistration> user = (List<UserRegistration>) factory.getCurrentSession()
-                .createQuery("FROM UserRegistration").list();
+                .createQuery("FROM User").list();
         return user;
     }
 
