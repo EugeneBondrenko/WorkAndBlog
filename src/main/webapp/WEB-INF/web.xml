@@ -34,6 +34,11 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+
+
+
+
+
 <!--New servlet -  С этим сервлетом подтянулись стили, если не глючит то не убирать-->
     <servlet-mapping>
         <servlet-name>default</servlet-name>

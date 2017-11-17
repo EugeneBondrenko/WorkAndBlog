@@ -2,6 +2,7 @@ package workandblog.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -57,21 +58,24 @@ public class HomeController {
     //A list of users
     @RequestMapping(value = "/userlist", method = RequestMethod.GET)
     public ModelAndView userList() {
-        ModelAndView modelAndView = new ModelAndView("userList");
-        modelAndView.addObject("user", new User());
-        modelAndView.addObject("listUsers", userService.userList());
+        ModelAndView modelAndView = new ModelAndView("myContactPhone");
+
+//        modelAndView.addObject("userList", userService.userList());
+        modelAndView.addObject("userBy", userService.userList());
 //        userService.userList();
         return modelAndView;
     }
 
     //    Displays the user by id in the browser
-    @RequestMapping(value = "/getuserbyid", method = RequestMethod.GET)
-    public ModelAndView getUserById() {
-        Long id = 12L;
+    @RequestMapping(value = "/get-user/{user-id}/", method = RequestMethod.GET)
+    public ModelAndView getUserById(@PathVariable("user-id") Long userId) {
+
         ModelAndView modelAndView = new ModelAndView("userById");
-        modelAndView.addObject("user", new User());
-        modelAndView.addObject("listUsers", userService.getUserById(id));
-        System.out.println(userService.getUserById(12L));
+
+        User user = userService.getUserById(userId);
+
+        modelAndView.addObject("user", user);
+
         return modelAndView;
     }
 
@@ -85,13 +89,46 @@ public class HomeController {
         return modelAndView;
     }
 
-//    Delete user by ID
-    @RequestMapping(value = "/remove", method = RequestMethod.GET)
-        public ModelAndView removeUserByID(){
-            ModelAndView modelAndView = new ModelAndView("workAndBlog");
-            Long id = 11L;
-            userService.removeUser(id);
-            return modelAndView;
+    //    Delete user by ID
+    @RequestMapping(value = "/remove", method = RequestMethod.POST)
+    public ModelAndView removeUserByID(@RequestParam("user_id") Long userId) {
+
+//        ModelAndView modelAndView = new ModelAndView("redirect:/userlist");
+        ModelAndView modelAndView = new ModelAndView("redirect:/myContactPhone");
+        userService.removeUser(userId);
+
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/edit-user/{user-id}/", method = RequestMethod.GET)
+    public ModelAndView editUser(@PathVariable("user-id") Long userId) {
+
+        ModelAndView editUserPage = new ModelAndView("editUser");
+
+        User user = userService.getUserById(userId);
+
+        editUserPage.addObject("user", user);
+
+        return editUserPage;
+    }
+
+
+    @RequestMapping(value = "/update-user", method = RequestMethod.POST)
+    public ModelAndView updateUser(@RequestParam("user_id") Long userId,
+                                   @RequestParam("user_name") String userName,
+                                   @RequestParam("user_surname") String userSurname,
+                                   @RequestParam("user_email") String userEmail) {
+
+        User user = userService.getUserById(userId);
+
+        user.setName(userName);
+        user.setEmail(userEmail);
+        user.setSurname(userSurname);
+
+        userService.updateUser(user);
+
+        return new ModelAndView("redirect:/edit-user/" + userId + "/");
+
     }
 
 //    Controller sorted by user by name, phone number, etc.

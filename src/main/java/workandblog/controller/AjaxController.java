@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AjaxController {
@@ -71,4 +72,17 @@ public class AjaxController {
     private String list(){
         return "workAndBlog";
     }
+
+
+    @RequestMapping (value = "/test1", method = RequestMethod.GET)
+    public ModelAndView test(){
+    ModelAndView modelAndView = new ModelAndView("test1");
+    return modelAndView;
+    }
+
+//    @RequestMapping (value = "/t", method = RequestMethod.GET)
+//    public ModelAndView myContactPhone(){
+//        ModelAndView modelAndView = new ModelAndView("myContactPhone");
+//        return modelAndView;
+//    }
 }

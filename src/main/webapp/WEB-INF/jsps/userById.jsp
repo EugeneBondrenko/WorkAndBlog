@@ -52,7 +52,7 @@
 <body>
 
 
-<% User user = (User) request.getAttribute("listUsers");%>
+<% User user = (User) request.getAttribute("user");%>
 
 <table class="tg">
     <tr>

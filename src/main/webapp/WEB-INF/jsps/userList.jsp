@@ -1,5 +1,6 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="workandblog.entity.User" %>
+<%@ page import="java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
@@ -59,7 +60,7 @@
 
 <h1>User List</h1>
 
-<c:if test="${!empty listUsers}">
+
     <table class="tg">
         <tr>
             <th width="60">ID</th>
@@ -70,30 +71,42 @@
             <th width="100">Contacts</th>
             <th width="100">Delete</th>
         </tr>
-        <c:forEach items="${listUsers}" var="user">
-            <tr>
-                <td>${user.id}</td>
-                <td><a href="/user ${user.id}">${user.name}</a> </td>
-                <td>${user.surname}</td>
-                <td>${user.email}</td>
-                <td>${user.password}</td>
-                <%--<td>${user.compass}</td>--%>
-                <%--<td><a href=" <c:url value='/edit ${user.id}'/>"> Edit </a> </td>--%>
-                <td><a href=" <c:url value='/contact ${user.id}'/>"> Contacts </a> </td>
-                <td><a href="<c:url value='/remove ${user.id}'/>" > Delete </a> </td>
-                <%--&lt;%&ndash;%>
-                    <%--String url = "/contact/" + id;--%>
-                <%--%>--%>
-                <%--<td><a href="<%out.print(url);%>"> Contacts </a> </td>--%>
 
-            </tr>
-        </c:forEach>
+        <%
+            List<User> userList = (List<User>) request.getAttribute("userList");
+
+            for(User user : userList){
+
+                String goToUserInfoLink = "/get-user/" + user.getId() + "/";
+                String goToEditUserLink = "/edit-user/" + user.getId() + "/";
+        %>
+                <tr>
+                    <td><%out.print(user.getId());%></td>
+                    <td><a href="<%out.print(goToUserInfoLink);%>"><%out.print(user.getName());%></a></td>
+                    <td><%out.print(user.getSurname());%></td>
+                    <td><%out.print(user.getEmail());%></td>
+                    <td><%out.print(user.getPassword());%></td>
+                    <td>
+                        <form action="/remove" method="post">
+                            <input type="hidden" name="user_id" value="<%out.print(user.getId());%>">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                    <td>
+                        <a href="<%out.print(goToEditUserLink);%>">
+                            <button >
+                                Edit
+                            </button>
+                        </a>
+                    </td>
+
+                </tr>
+       <%}%>
     </table>
 
     <a href="/remove"> Стартовая страницаа </a><br>
     <h3>Тестовые ссылки</h3><br>
 
-</c:if>
 
 
 
