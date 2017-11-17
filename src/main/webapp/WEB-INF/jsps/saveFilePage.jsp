@@ -17,7 +17,7 @@
 
 <%--<img src="<%out.print("/show-image/" + object.getGeneratedName + "/")%>">--%>
 
-<img src="/show-image/2e48f744-e0ed-4ac4-8c25-63b26ad41d72.jpg/">
+<img src="/show-image/c2bd2746-11e4-491c-a819-7b5b05f25e72.jpeg/">
 
 </body>
 </html>

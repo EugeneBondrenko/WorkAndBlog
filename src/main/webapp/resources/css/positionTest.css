@@ -1,0 +1,63 @@
+body{
+    font: 1em Arial;
+    /*Забираем автоматические 5 px отступа*/
+    margin: 0;
+}
+
+/*Ширина и высота контейнера */
+.container{
+
+    background: #286050;
+    /*Изменить со столбца в строку*/
+    display: inline-block;
+    /*width: 200px;*/
+    height: 100px;
+    /*Выпавнивание елемента*/
+    margin: 80px auto;
+    /*Добавляем 40 рх отступа на этот блок (вокруг или 20х50 - x-y)*/
+    margin: 40px;
+    /*Внутренний отступ*/
+    padding: 10px;
+
+    /*Максимальное и минимальное сужение блока в браузере*/
+    max-width: 500px;
+    min-width: 300px;
+    /*позиционирование .container-iner относительно container*/
+    position: relative;
+}
+
+.container-iner {
+    background: #ffffff;
+    margin: 10px;
+    /*позиционирование относительно top botton i.t.d*/
+    /*position: absolute;*/
+    top: 20px;
+    right: 20px;
+    /*зафиксирует относительно окна*/
+    position: fixed;
+    /*элемент будет находится выше блоков*/
+    z-index: 1;
+}
+
+.container1{
+    position: relative;
+    left: 100px;
+    background: #999;
+    width: 300px;
+    height: 200px;
+    /*впихивает надпись в блок если она не помещается*/
+    /*overflow: hidden;*/
+    /*впихнет в блок и появится полос прокрутки*/
+    overflow: scroll;
+}
+
+a{
+    width: 300px;
+    height: 50px;
+    background: #888888;
+    /*Разместить в столбец*/
+    display: block;
+
+    /*Выпавнивание елемента*/
+    margin: 30px auto;
+}

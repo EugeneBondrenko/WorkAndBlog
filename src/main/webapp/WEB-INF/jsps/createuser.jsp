@@ -9,7 +9,7 @@
 <html>
 <head>
 
-    <link href="<c:url value="/resources/css/regi.authorizationStile.css"/>" rel="stylesheet" >
+    <link href="<c:url value="/resources/css/authorizationStile.css"/>" rel="stylesheet" >
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <title>Create</title>
@@ -76,13 +76,13 @@
                     </label>
                 </div><br>
 
-                <div class="form-row">
-                    <label for="compass" onkeyup="doAjax2()">
-                        <span class="reg">Confirm password : </span>
-                        <input type="text" id="compass" name="compass" placeholder="Confirm password"><br>
-                        <span id="ident"/>
-                    </label>
-                </div><br>
+                <%--<div class="form-row">--%>
+                    <%--<label for="compass" onkeyup="doAjax2()">--%>
+                        <%--<span class="reg">Confirm password : </span>--%>
+                        <%--<input type="text" id="compass" name="compass" placeholder="Confirm password"><br>--%>
+                        <%--<span id="ident"/>--%>
+                    <%--</label>--%>
+                <%--</div><br>--%>
 
             <div class="form-row">
                 <input type="submit" class="button button-blocl" value="Get Started">

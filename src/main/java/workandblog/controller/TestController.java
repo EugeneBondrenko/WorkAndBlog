@@ -12,12 +12,33 @@ public class TestController {
     @Autowired
     MailService mailService;
 
-    @RequestMapping(value = "/send", method = RequestMethod.GET)
-    public String send() {
+//    @RequestMapping(value = "/send", method = RequestMethod.GET)
+//    public String send() {
+//
+//        mailService.sendEmailAfterRegistration("maksym.lishchynskyi@gmail.com","Ты почему дома сидишь? Ищи работу тунеядец))))");
+//        return "workAndBlog";
+//    }
 
-        mailService.sendEmailAfterRegistration("o.grument@gmail.com","hi");
-        return  "list";
-    }
+//    @RequestMapping(value = "/test1", method = RequestMethod.GET)
+//    public String authorizationUser(){
+//        return "authorizationUser";
+//    }
+
+//    @RequestMapping(value = "/test2", method = RequestMethod.GET)
+//    public String authorizationUser(){
+//        return "menuTest";
+//    }
+//
+//
+//    @RequestMapping(value = "/test3", method = RequestMethod.GET)
+//    public String positionTest(){
+//        return "positionTest";
+//    }
+
+//    @RequestMapping(value = "/menuList", method = RequestMethod.GET)
+//    public String menuList(){
+//        return "menuList";
+//    }
 
 
 }

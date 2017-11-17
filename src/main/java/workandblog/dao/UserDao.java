@@ -1,21 +1,23 @@
 package workandblog.dao;
 
-import workandblog.entity.UserRegistration;
+import workandblog.entity.User;
+import workandblog.entity.User;
 
 import java.util.List;
 
 public interface UserDao {
 
-    Long create(UserRegistration userRegistration);
+    Long create(User user);
 
     List userList();
+    List bookList();
 
 //    Изменять книгу
-    public void updateUser(UserRegistration user);
+    public void updateUser(User user);
 
 //    Удалить юзера по id
-    public void removeBook(long id);
+    public void removeUser(long id);
 
 //    Получить узера по id
-    public UserRegistration getUserById(Long id);
+    public User getUserById(long id);
  }

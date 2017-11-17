@@ -1,3 +1,4 @@
+/*
 package workandblog.dao;
 
 import workandblog.entity.ContactFile;
@@ -10,3 +11,4 @@ public interface ContactDao {
 
     List contactList();
 }
+*/

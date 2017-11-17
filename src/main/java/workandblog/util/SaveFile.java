@@ -1,8 +1,12 @@
 package workandblog.util;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.web.multipart.MultipartFile;
+import workandblog.annotations.ShowTest;
 import workandblog.enums.MainPathEnum;
+import workandblog.logger.ControllerLogger;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -11,8 +15,10 @@ import java.util.ArrayList;
 
 public class SaveFile {
 
-//    private MultipartFile[] files;
-       private MultipartFile files;
+    private Logger logger = LogManager.getLogger(ControllerLogger.class);
+
+    //    private MultipartFile[] files;
+    private MultipartFile files;
 
 //    public SaveFile(MultipartFile[] files) {
 //        this.files = files;
@@ -22,7 +28,7 @@ public class SaveFile {
         this.files = files;
     }
 
-
+//    @ShowTest
     public ArrayList<String> saveFileAndGetNames() {
 
         ArrayList<String> fileNames = new ArrayList<>();
@@ -31,43 +37,44 @@ public class SaveFile {
 //            MultipartFile file = this.files[i];
 
         MultipartFile file = this.files;
-            String originalFileName = file.getOriginalFilename();
+        String originalFileName = file.getOriginalFilename();
 
 
-            System.out.println("originalFileName : " + originalFileName);
+        System.out.println("originalFileName : " + originalFileName);
 
 
-            String fileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
-            String name = (java.util.UUID.randomUUID() + fileExtension);
+        String fileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
+        String name = (java.util.UUID.randomUUID() + fileExtension);
 
-            System.out.println("name : " + name);
+        System.out.println("name : " + name);
 
-            fileNames.add(name);
-            try {
-                byte[] bytes = file.getBytes();
-                File dir = new File(MainPathEnum.mainPath.getValue());
-                dir.setReadable(true, false);
-                dir.setExecutable(true, false);
-                dir.setWritable(true, false);
-                if (!dir.exists()) {
-                    dir.mkdirs();
-                    System.out.println("==========CREATE DIR" + dir.getAbsolutePath());
-                }
-                // Create the file on server
-                File serverFile = new File(dir.getAbsolutePath() + "/" + name);
-
-                serverFile.setReadable(true, false);
-                serverFile.setExecutable(true, false);
-                serverFile.setWritable(true, false);
-
-                serverFile.createNewFile();
-                BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
-                stream.write(bytes);
-                stream.close();
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
+        fileNames.add(name);
+        try {
+            byte[] bytes = file.getBytes();
+            File dir = new File(MainPathEnum.mainPath.getValue());
+            dir.setReadable(true, false);
+            dir.setExecutable(true, false);
+            dir.setWritable(true, false);
+            if (!dir.exists()) {
+                dir.mkdirs();
+                System.out.println("==========CREATE DIR" + dir.getAbsolutePath());
             }
-       // }
+            // Create the file on server
+            File serverFile = new File(dir.getAbsolutePath() + "/" + name);
+
+            serverFile.setReadable(true, false);
+            serverFile.setExecutable(true, false);
+            serverFile.setWritable(true, false);
+
+            serverFile.createNewFile();
+            BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
+            stream.write(bytes);
+            stream.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        logger.info("Info logger");
+        // }
         return fileNames;
     }
 

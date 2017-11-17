@@ -1,3 +1,4 @@
+/*
 package workandblog.service;
 
 import workandblog.entity.ContactFile;
@@ -13,3 +14,4 @@ public interface ContactService {
     List<ContactFile> contactList();
 
 }
+*/

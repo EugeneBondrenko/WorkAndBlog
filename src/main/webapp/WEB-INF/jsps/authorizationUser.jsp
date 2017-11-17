@@ -7,13 +7,10 @@
 
 
 
-<%--<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">--%>
-
-<!DOCTYPE html>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <link type="text/css" href="<c:url value="/resources/css/regi.authorizationStile.css" />" rel="stylesheet">
+    <link type="text/css" href="<c:url value="/resources/css/regi.css" />" rel="stylesheet">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Registration</title>
 
@@ -22,7 +19,7 @@
 
 <h1>Registration</h1>
 
-<form class="reg-form" action="/create-user" method="post">
+<form class="reg-form" action="/" method="get">
 
     <div class="form-row">
         <%--Связь lable с id--%>
@@ -32,7 +29,7 @@
 
     <div class="form-row">
         <label for="rorm_surname"> Surname : </label>
-        <input type="text" id="rorm_surname"  required name="surname">
+        <input type="text" id="rorm_surname" name="surname">
     </div>
 
     <div class="form-row">

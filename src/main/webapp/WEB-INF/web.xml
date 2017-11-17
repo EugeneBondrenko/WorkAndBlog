@@ -12,6 +12,7 @@
         <param-value>/WEB-INF/spring/context.xml
 
         </param-value>
+
     </context-param>
 
     <listener>
@@ -32,6 +33,11 @@
         <servlet-name>mvc-dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+
+
+
+
 
 <!--New servlet -  С этим сервлетом подтянулись стили, если не глючит то не убирать-->
     <servlet-mapping>
